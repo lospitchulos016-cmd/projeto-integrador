@@ -27,16 +27,13 @@ form.addEventListener("submit", async (e) => {
   btn.disabled = true;
   btn.textContent = "Entrando...";
   try {
-    await new Promise(r => setTimeout(r, 800));
-    const emailUsuario = email.value.trim();
-    const nomeUsuario = emailUsuario.split("@")[0].replace(/[._-]+/g, " ");
-    localStorage.setItem("usuarioLosPitchulos", JSON.stringify({
-      nome: nomeUsuario,
-      email: emailUsuario
-    }));
+    const usuario = await Banco.entrar(email.value, senha.value);
+    if (!usuario) throw new Error("E-mail ou senha incorretos.");
+
+    localStorage.setItem("usuarioLosPitchulos", JSON.stringify(usuario));
     window.location.href = "../home/index.html";
-  } catch {
-    setError(senha, "E-mail ou senha incorretos.");
+  } catch (erro) {
+    setError(senha, erro.message);
     btn.disabled = false;
     btn.textContent = "Entrar";
   }

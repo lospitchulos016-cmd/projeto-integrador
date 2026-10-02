@@ -1,9 +1,5 @@
-const burritos = [
-    { id: 1, nome: "Burrito Supreme", descricao: "Carne, arroz, feijão, queijo e guacamole.", preco: 35, categorias: ["carne", "picante"], imagem: "🌯" },
-    { id: 2, nome: "Burrito de Frango", descricao: "Frango grelhado, arroz mexicano e salsa fresca.", preco: 31, categorias: ["carne"], imagem: "🌯" },
-    { id: 3, nome: "Burrito Chipotle", descricao: "Carne temperada, molho chipotle e queijo.", preco: 38, categorias: ["carne", "picante"], imagem: "🌯" },
-    { id: 4, nome: "Burrito Vegano", descricao: "Feijão, arroz, legumes grelhados e guacamole.", preco: 29, categorias: ["vegano"], imagem: "🌯" },
-];
+// Os burritos vêm do banco (../banco/banco.json), carregados no fim do arquivo.
+let burritos = [];
 
 const CHAVE_CARRINHO = "losPitchulosCarrinho";
 let filtroAtual = "todos";
@@ -76,7 +72,7 @@ function atualizarResumo() {
 
 function mostrarProdutos() {
     const encontrados = burritos.filter((produto) => {
-        const filtroOk = filtroAtual === "todos" || produto.categorias.includes(filtroAtual);
+        const filtroOk = filtroAtual === "todos" || produto.tags.includes(filtroAtual);
         const texto = `${produto.nome} ${produto.descricao}`.toLocaleLowerCase("pt-BR");
         return filtroOk && texto.includes(termoBusca);
     });
@@ -139,5 +135,13 @@ document.getElementById("abrirCarrinho").addEventListener("click", () => {
 });
 
 atualizarFiltro();
-mostrarProdutos();
-atualizarResumo();
+Banco.listarProdutos("burrito")
+    .then((lista) => {
+        burritos = lista;
+        carrinho = carregarBurritos();
+        mostrarProdutos();
+        atualizarResumo();
+    })
+    .catch((erro) => {
+        listaProdutos.innerHTML = `<p class="nenhum-produto">${erro.message}</p>`;
+    });

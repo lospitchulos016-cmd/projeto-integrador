@@ -1,0 +1,26 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Cliente Teste",
+      "email": "teste@lospitchulos.com",
+      "senhaHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "criadoEm": "2026-10-02T00:00:00.000Z"
+    }
+  ],
+  "categorias": [
+    { "id": 1, "nome": "Tacos", "tipo": "taco" },
+    { "id": 2, "nome": "Burritos", "tipo": "burrito" }
+  ],
+  "produtos": [
+    { "id": 1, "categoriaId": 1, "nome": "Taco de Carnitas", "descricao": "Carne de porco desfiada, cebola e coentro.", "preco": 22, "tags": ["carne", "picante"], "imagem": "🌮", "ativo": true },
+    { "id": 2, "categoriaId": 1, "nome": "Taco Baja (peixe)", "descricao": "Peixe empanado, repolho e molho cremoso.", "preco": 26, "tags": ["picante"], "imagem": "🌮", "ativo": true },
+    { "id": 3, "categoriaId": 1, "nome": "Taco Vegano", "descricao": "Cogumelos e legumes grelhados.", "preco": 20, "tags": ["vegano"], "imagem": "🌮", "ativo": true },
+    { "id": 4, "categoriaId": 2, "nome": "Burrito Supreme", "descricao": "Carne, arroz, feijão, queijo e guacamole.", "preco": 35, "tags": ["carne", "picante"], "imagem": "🌯", "ativo": true },
+    { "id": 5, "categoriaId": 2, "nome": "Burrito de Frango", "descricao": "Frango grelhado, arroz mexicano e salsa fresca.", "preco": 31, "tags": ["carne"], "imagem": "🌯", "ativo": true },
+    { "id": 6, "categoriaId": 2, "nome": "Burrito Chipotle", "descricao": "Carne temperada, molho chipotle e queijo.", "preco": 38, "tags": ["carne", "picante"], "imagem": "🌯", "ativo": true },
+    { "id": 7, "categoriaId": 2, "nome": "Burrito Vegano", "descricao": "Feijão, arroz, legumes grelhados e guacamole.", "preco": 29, "tags": ["vegano"], "imagem": "🌯", "ativo": true }
+  ],
+  "pedidos": [],
+  "feedbacks": []
+}

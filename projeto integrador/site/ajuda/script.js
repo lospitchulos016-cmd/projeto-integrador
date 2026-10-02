@@ -9,7 +9,7 @@ campoMensagem.addEventListener("input", () => {
     contadorMensagem.textContent = `${campoMensagem.value.length} / 3000`;
 });
 
-formulario.addEventListener("submit", (evento) => {
+formulario.addEventListener("submit", async (evento) => {
     evento.preventDefault();
     if (!formulario.reportValidity()) return;
 
@@ -18,6 +18,14 @@ formulario.addEventListener("submit", (evento) => {
     const email = String(dados.get("email")).trim();
     const assunto = String(dados.get("assunto")).trim();
     const mensagem = String(dados.get("mensagem")).trim();
+
+    // Guarda o feedback no banco antes de abrir o e-mail.
+    try {
+        await Banco.salvarFeedback({ nome, email, assunto, mensagem });
+    } catch (erro) {
+        console.warn("Feedback não foi salvo no banco:", erro.message);
+    }
+
     const assuntoEmail = `Feedback SAC - ${assunto}`;
     const corpoEmail = [
         `Nome: ${nome}`,

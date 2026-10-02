@@ -96,12 +96,21 @@ botaoEditar.addEventListener("click", () => {
     document.getElementById("editarNome").focus();
 });
 
-formularioEdicao.addEventListener("submit", (evento) => {
+formularioEdicao.addEventListener("submit", async (evento) => {
     evento.preventDefault();
-    const usuarioAtualizado = {
+    let usuarioAtualizado = {
         nome: document.getElementById("editarNome").value.trim(),
         email: document.getElementById("editarEmail").value.trim(),
     };
+
+    if (usuario?.id) {
+        try {
+            usuarioAtualizado = await Banco.atualizarUsuario(usuario.id, usuarioAtualizado);
+        } catch (erro) {
+            window.alert(erro.message);
+            return;
+        }
+    }
 
     localStorage.setItem(CHAVE_USUARIO, JSON.stringify(usuarioAtualizado));
     atualizarUsuario(usuarioAtualizado);

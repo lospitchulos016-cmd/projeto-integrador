@@ -90,7 +90,15 @@ listaCarrinho.addEventListener("click", (evento) => {
     desenharCarrinho();
 });
 
-formulario.addEventListener("submit", (evento) => {
+function lerUsuarioLogado() {
+    try {
+        return JSON.parse(localStorage.getItem("usuarioLosPitchulos") || "null");
+    } catch {
+        return null;
+    }
+}
+
+formulario.addEventListener("submit", async (evento) => {
     evento.preventDefault();
     mensagemCheckout.textContent = "";
 
@@ -107,8 +115,33 @@ formulario.addEventListener("submit", (evento) => {
     }
 
     localStorage.setItem("enderecoEntrega", endereco);
+    const numero = `LP-${Date.now().toString().slice(-6)}`;
+    const subtotal = itens.reduce((soma, item) => soma + Number(item.preco) * Number(item.quantidade), 0);
+
+    botaoFinalizar.disabled = true;
+    try {
+        await Banco.salvarPedido({
+            numero,
+            usuarioId: lerUsuarioLogado()?.id ?? null,
+            endereco,
+            itens: itens.map((item) => ({
+                produtoId: Number(item.id.split("-")[1]),
+                nome: item.nome,
+                preco: Number(item.preco),
+                quantidade: Number(item.quantidade),
+            })),
+            subtotal,
+            taxaEntrega: TAXA_ENTREGA,
+            total: subtotal + TAXA_ENTREGA,
+        });
+    } catch (erro) {
+        mensagemCheckout.textContent = erro.message;
+        botaoFinalizar.disabled = false;
+        return;
+    }
+
     const pedido = {
-        numero: `LP-${Date.now().toString().slice(-6)}`,
+        numero,
         endereco,
         itens,
         subtotal: totalPedido.textContent,

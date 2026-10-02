@@ -1,51 +1,7 @@
 
 
-const produtos = [
-
-    {
-        id: 1,
-        nome: "Taco de Carnitas",
-
-        descricao: "Carne de porco..",
-
-        preco: 22,
-
-
-
-        categorias: [
-            "picante"
-        ]
-    },
-
-    {
-        id: 2,
-
-        nome: "Taco Baja (peixe)",
-
-        descricao: "Peixe empanado",
-
-        preco: 26,
-
-        categorias: [
-            "picante"
-        ]
-    },
-
-    {
-        id: 3,
-
-        nome: "Taco Vegano",
-
-        descricao: "Cogumelos e legumes",
-
-        preco: 20,
-
-        categorias: [
-            "vegano"
-        ]
-    }
-
-];
+// Os tacos vêm do banco (../banco/banco.json), carregados no fim do arquivo.
+let produtos = [];
 
 
 
@@ -176,7 +132,7 @@ function mostrarProdutos() {
         produtosFiltrados =
             produtos.filter(
                 produto =>
-                    produto.categorias
+                    produto.tags
                         .includes(
                             filtroAtual
                         )
@@ -686,8 +642,14 @@ modalCarrinho.addEventListener(
 
 
 
-mostrarProdutos();
-
-atualizarCarrinho();
-
-atualizarTextoFiltro();
+Banco.listarProdutos("taco")
+    .then(lista => {
+        produtos = lista;
+        carrinho = carregarCarrinhoTacos();
+        mostrarProdutos();
+        atualizarCarrinho();
+        atualizarTextoFiltro();
+    })
+    .catch(erro => {
+        listaProdutos.innerHTML = `<p style="text-align:center; padding:60px 20px; color:#666;">${erro.message}</p>`;
+    });

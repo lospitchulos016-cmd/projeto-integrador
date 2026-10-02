@@ -12,7 +12,7 @@
     
     <div class="card" id="card-cadastro">
       <div class="header">
-        <img src="img/logo.png">
+        <img src="../../imgs/login/icon.png">
        
         <h1>Los pitchulos</h1>
         <p>Crie sua conta para fazer seu pedido</p>
@@ -35,6 +35,8 @@
           <input type="password" id="senha" placeholder="••••••••" required minlength="6">
         </div>
 
+        <p id="erro-cadastro" role="alert" style="color:#b3261e; margin:0 0 12px;"></p>
+
         <button type="submit" class="btn-submit">Cadastrar</button>
       </form>
 
@@ -51,6 +53,7 @@
     </div>
   </main>
 
+  <script src="../banco/banco.js"></script>
   <script src="scripit.js"></script>
 </body>
 </html>

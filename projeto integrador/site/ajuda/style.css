@@ -1,0 +1,224 @@
+@import url("../checkout/style.css");
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 36px 18px;
+    display: grid;
+    place-items: center;
+}
+
+.pagina-sac {
+    width: min(100%, 760px);
+    padding: 36px;
+    background: rgba(255, 250, 245, 0.96);
+    border: 1px solid rgba(222, 182, 151, 0.6);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+.cabecalho-sac {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+
+.voltar-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 26px;
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.voltar-inicio:hover,
+.rodape-sac a:hover,
+.fallback-email:hover {
+    color: var(--primary);
+}
+
+.sobretitulo {
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.cabecalho-sac h1 {
+    font-size: clamp(1.9rem, 6vw, 2.5rem);
+    line-height: 1.12;
+}
+
+.introducao {
+    max-width: 560px;
+    margin-top: 10px;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.form-feedback {
+    padding-top: 24px;
+    display: grid;
+    gap: 18px;
+}
+
+.campos-duplos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    font: inherit;
+    outline: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.campo input,
+.campo select {
+    min-height: 48px;
+}
+
+.campo textarea {
+    min-height: 160px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #9a8173;
+}
+
+.campo input:focus-visible,
+.campo select:focus-visible,
+.campo textarea:focus-visible {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(217, 91, 42, 0.14);
+}
+
+.contador {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    text-align: right;
+}
+
+.acoes-feedback {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.botao-enviar {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 11px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 800;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.botao-enviar:hover {
+    transform: translateY(-1px);
+    background: var(--primary-dark);
+}
+
+.destinatario {
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.destinatario strong {
+    color: var(--text);
+}
+
+.status-envio {
+    min-height: 1.2em;
+    color: var(--success, #2e8b57);
+    font-size: 0.9rem;
+}
+
+.fallback-email {
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-underline-offset: 3px;
+}
+
+.rodape-sac {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+}
+
+.rodape-sac a {
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-underline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 14px 10px;
+        place-items: start center;
+    }
+
+    .pagina-sac {
+        margin: auto 0;
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .campos-duplos {
+        grid-template-columns: 1fr;
+    }
+
+    .acoes-feedback {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

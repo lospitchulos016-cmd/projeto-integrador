@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f1ea">
+    <title>Meu perfil | Los Pitchulos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="pagina-perfil">
+        <header class="cabecalho-perfil">
+            <a class="botao-voltar" href="../home/index.html" aria-label="Voltar para o início">‹</a>
+            <div>
+                <p class="sobretitulo">LOS PITCHULOS</p>
+                <h1>Meu perfil</h1>
+            </div>
+        </header>
+
+        <section class="cartao-usuario" aria-labelledby="nomeUsuario">
+            <div class="foto-container">
+                <div class="avatar-perfil">
+                    <img id="fotoPerfil" alt="Foto de perfil" hidden>
+                    <span id="iniciaisPerfil" aria-hidden="true">LP</span>
+                </div>
+                <input type="file" id="escolherFoto" accept="image/*">
+                <label for="escolherFoto" class="botao-foto">Alterar foto</label>
+            </div>
+
+            <div class="informacoes-usuario">
+                <h2 id="nomeUsuario">Visitante</h2>
+                <p id="emailUsuario">Entre para acessar sua conta.</p>
+                <button id="editarPerfil" class="botao-editar" type="button">Editar perfil</button>
+            </div>
+        </section>
+
+        <form id="formEditarPerfil" class="form-editar-perfil" hidden>
+            <div class="campo-perfil">
+                <label for="editarNome">Nome</label>
+                <input id="editarNome" name="nome" type="text" autocomplete="name" required>
+            </div>
+            <div class="campo-perfil">
+                <label for="editarEmail">E-mail</label>
+                <input id="editarEmail" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="acoes-edicao">
+                <button class="botao-salvar" type="submit">Salvar alterações</button>
+                <button class="botao-cancelar" id="cancelarEdicao" type="button">Cancelar</button>
+            </div>
+        </form>
+
+        <nav class="atalhos-perfil" aria-label="Minha conta">
+            <a class="atalho-perfil" href="../carrinho/index.html">
+                <span>Meu carrinho</span><span aria-hidden="true">›</span>
+            </a>
+            <a class="atalho-perfil" href="../checkout/index.html">
+                <span>Finalizar pedido</span><span aria-hidden="true">›</span>
+            </a>
+            <a class="atalho-perfil" href="../cardapio/index.html">
+                <span>Ver cardápio</span><span aria-hidden="true">›</span>
+            </a>
+        </nav>
+
+        <section class="ultimo-pedido" aria-labelledby="tituloUltimoPedido">
+            <div class="titulo-secao">
+                <h2 id="tituloUltimoPedido">Último pedido</h2>
+                <span id="statusPedido" class="status-pedido" hidden></span>
+            </div>
+            <div id="resumoUltimoPedido" class="resumo-ultimo-pedido">
+                <p class="estado-sem-pedido">Você ainda não tem pedidos confirmados.</p>
+            </div>
+            <a id="verCardapio" class="link-cardapio" href="../cardapio/index.html">Escolher algo para comer</a>
+        </section>
+
+        <footer class="rodape-perfil">
+            <a href="../login/index.html" id="sairConta">Sair da conta</a>
+            <span>© 2026 Los Pitchulos</span>
+        </footer>
+    </main>
+    <script src="js.js"></script>
+</body>
+</html>

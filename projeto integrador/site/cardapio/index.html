@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tacos - Cardápio Mexicano</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        
+        <header class="header">
+
+            <a class="btn-voltar" href="../home/index.html" aria-label="Voltar para o início" title="Voltar para o início">
+                ‹
+            </a>
+
+            <div class="titulo">
+
+                <h1>Tacos</h1>
+
+                <p>
+                    Filtros:
+                    <span id="filtrosAtivos">
+                        [Picante] [Vegano]
+                    </span>
+                </p>
+
+            </div>
+
+        </header>
+
+
+        
+        <div class="filtros">
+
+            <button
+                class="filtro ativo"
+                data-filtro="todos">
+                Todos
+            </button>
+
+            <button
+                class="filtro"
+                data-filtro="picante">
+                Picante
+            </button>
+
+            <button
+                class="filtro"
+                data-filtro="vegano">
+                Vegano
+            </button>
+
+        </div>
+
+
+    
+        <section
+            class="lista-produtos"
+            id="listaProdutos">
+        </section>
+
+
+        
+        <div class="barra-carrinho">
+
+            <div class="informacoes-carrinho">
+
+                <strong id="quantidadeCarrinho">
+                    0 itens
+                </strong>
+
+                <span id="totalCarrinho">
+                    R$ 0,00
+                </span>
+
+            </div>
+
+            <button
+                class="btn-carrinho"
+                onclick="window.location.href='../carrinho/index.html'">
+
+                Ver pedido
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <div
+        class="modal"
+        id="modalCarrinho">
+
+        <div class="modal-conteudo">
+
+            <button
+                class="fechar"
+                onclick="fecharCarrinho()">
+                ×
+            </button>
+
+            <h2>
+                Seu pedido
+            </h2>
+
+            <div
+                id="itensCarrinho">
+            </div>
+
+            <div class="total-modal">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="totalModal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+            <button
+                class="btn-finalizar"
+                onclick="finalizarPedido()">
+
+                ir para o checkout
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="toast"
+        id="toast">
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+@import url("../checkout/style.css");
+
+body {
+    min-height: 100vh;
+    padding: 32px 18px;
+}
+
+.pagina-perfil {
+    width: min(100%, 820px);
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 250, 245, 0.96);
+    border: 1px solid rgba(222, 182, 151, 0.6);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+.cabecalho-perfil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+
+.cabecalho-perfil h1 {
+    font-size: 1.8rem;
+}
+
+.cabecalho-perfil .sobretitulo {
+    margin-bottom: 4px;
+}
+
+.cartao-usuario {
+    margin-top: 22px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.foto-container {
+    width: 132px;
+    flex: 0 0 132px;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+}
+
+.avatar-perfil {
+    width: 104px;
+    height: 104px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 3px solid var(--line);
+    border-radius: 50%;
+    background: var(--card-soft);
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.avatar-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.botao-foto {
+    color: var(--primary-dark);
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+#escolherFoto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.botao-foto:focus-within,
+#escolherFoto:focus-visible + .botao-foto {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.informacoes-usuario {
+    min-width: 0;
+}
+
+.informacoes-usuario h2 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    overflow-wrap: anywhere;
+}
+
+.informacoes-usuario p {
+    margin-bottom: 15px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.botao-editar,
+.botao-salvar,
+.botao-cancelar {
+    min-height: 42px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.botao-editar,
+.botao-salvar {
+    background: var(--primary);
+    color: #fff;
+}
+
+.botao-editar:hover,
+.botao-salvar:hover {
+    transform: translateY(-1px);
+    background: var(--primary-dark);
+}
+
+.botao-cancelar {
+    background: var(--card-soft);
+    color: var(--primary-dark);
+}
+
+.botao-cancelar:hover {
+    background: #f8e6d8;
+}
+
+.form-editar-perfil {
+    margin-top: 14px;
+    padding: 20px;
+    display: grid;
+    gap: 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.campo-perfil label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.campo-perfil input {
+    width: 100%;
+    min-height: 44px;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--panel);
+    color: var(--text);
+    font: inherit;
+}
+
+.acoes-edicao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.atalhos-perfil {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.atalho-perfil {
+    min-height: 58px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: var(--card-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.atalho-perfil:hover {
+    transform: translateY(-1px);
+    background: #f8e6d8;
+}
+
+.atalho-perfil span:last-child {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+}
+
+.ultimo-pedido {
+    margin-top: 24px;
+    padding: 22px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.titulo-secao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.titulo-secao h2 {
+    font-size: 1.1rem;
+}
+
+.status-pedido {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #e8f3eb;
+    color: var(--success);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.resumo-ultimo-pedido {
+    padding: 14px;
+    background: var(--panel);
+    border-radius: 10px;
+}
+
+.estado-sem-pedido {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.item-ultimo-pedido,
+.total-ultimo-pedido {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.item-ultimo-pedido strong,
+.total-ultimo-pedido strong {
+    color: var(--text);
+}
+
+.total-ultimo-pedido {
+    margin-top: 5px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    color: var(--text);
+    font-weight: 800;
+}
+
+.link-cardapio {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--primary-dark);
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-underline-offset: 3px;
+}
+
+.rodape-perfil {
+    margin-top: 22px;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.83rem;
+}
+
+.rodape-perfil a {
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-underline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 14px 10px;
+    }
+
+    .pagina-perfil {
+        padding: 20px 14px;
+        border-radius: 20px;
+    }
+
+    .cartao-usuario {
+        padding: 18px 14px;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .foto-container {
+        width: 94px;
+        flex-basis: 94px;
+    }
+
+    .avatar-perfil {
+        width: 78px;
+        height: 78px;
+        font-size: 1.4rem;
+    }
+
+    .informacoes-usuario h2 {
+        font-size: 1.2rem;
+    }
+
+    .atalhos-perfil {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .cartao-usuario {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .acoes-edicao {
+        flex-direction: column;
+    }
+
+    .acoes-edicao button {
+        width: 100%;
+    }
+
+    .rodape-perfil {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

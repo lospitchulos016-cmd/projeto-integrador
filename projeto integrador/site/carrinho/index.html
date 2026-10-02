@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f7f1ea">
+	<title>Carrinho | Los Pitchulos</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="checkout pagina-carrinho">
+		<header class="cabecalho-checkout">
+			<a class="botao-voltar" href="../home/index.html" aria-label="Voltar para o início">‹</a>
+			<div>
+				<p class="sobretitulo">LOS PITCHULOS</p>
+				<h1>Seu carrinho</h1>
+			</div>
+		</header>
+
+		<section class="itens-pedido" aria-labelledby="titulo-itens">
+			<div class="titulo-secao">
+				<h2 id="titulo-itens">Confira seu pedido</h2>
+			</div>
+			<div id="listaCarrinho" class="lista-carrinho" aria-live="polite"></div>
+		</section>
+
+		<section class="resumo-carrinho" aria-labelledby="titulo-resumo">
+			<div class="linha-resumo"><span>Subtotal</span><strong id="subtotalCarrinho">R$ 0,00</strong></div>
+			<div class="linha-resumo"><span>Entrega</span><strong>Grátis</strong></div>
+			<div class="linha-resumo total"><span>Total</span><strong id="totalCarrinho">R$ 0,00</strong></div>
+			<a class="botao-finalizar" id="irCheckout" href="../checkout/index.html">Continuar para o checkout</a>
+			<p id="mensagemCarrinho" class="mensagem-checkout" role="status" aria-live="polite"></p>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f1ea">
+    <title>Entrar | Los Pitchulos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="pagina-login">
+        <a class="voltar-inicio" href="../home/index.html">‹ <span>Início</span></a>
+
+        <section class="painel-login" aria-labelledby="tituloLogin">
+            <header class="cabecalho-login">
+                <img src="../../imgs/login/icon.png" alt="Mascote Los Pitchulos">
+                <p class="sobretitulo">LOS PITCHULOS</p>
+                <h1 id="tituloLogin">Bem-vindo de volta</h1>
+                <p>Acesse sua conta para continuar.</p>
+            </header>
+
+            <form id="login" novalidate>
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="email" autocomplete="username" aria-describedby="email-error" required>
+                    <p class="error" id="email-error" role="alert"></p>
+                </div>
+                <div class="field">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" name="senha" placeholder="Mínimo de 6 caracteres" autocomplete="current-password" aria-describedby="senha-error" required minlength="6">
+                    <p class="error" id="senha-error" role="alert"></p>
+                </div>
+                <button type="submit" id="entrar">Entrar</button>
+                <p class="mensagem" id="mensagem" role="status" aria-live="polite">Ainda não tem uma conta? <a href="../cadastro/index.html">Cadastre-se</a></p>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

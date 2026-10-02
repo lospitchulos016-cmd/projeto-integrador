@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f7f1ea">
+	<title>Pedido confirmado | Los Pitchulos</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="pagina-confirmacao">
+		<section class="mensagem-sucesso" aria-labelledby="tituloConfirmacao">
+			<div class="icone-sucesso" aria-hidden="true">✓</div>
+			<p class="sobretitulo">LOS PITCHULOS</p>
+			<h1 id="tituloConfirmacao">Pedido confirmado!</h1>
+			<p class="texto-sucesso">Recebemos seu pedido e já estamos preparando tudo com carinho.</p>
+			<p class="numero-pedido">Pedido <strong id="numeroPedido">—</strong></p>
+		</section>
+
+		<section class="detalhes-confirmacao" id="detalhesPedido" aria-label="Detalhes do pedido">
+			<div class="bloco-entrega">
+				<h2>Endereço de entrega</h2>
+				<p id="enderecoPedido">—</p>
+			</div>
+
+			<div class="bloco-itens">
+				<h2>Resumo do pedido</h2>
+				<ul id="itensConfirmados" class="itens-confirmados"></ul>
+			</div>
+
+			<div class="resumo-valores">
+				<p><span>Subtotal</span><strong id="subtotalConfirmado">R$ 0,00</strong></p>
+				<p><span>Entrega</span><strong id="entregaConfirmada">Grátis</strong></p>
+				<p class="total-confirmado"><span>Total do pedido</span><strong id="totalConfirmado">R$ 0,00</strong></p>
+			</div>
+		</section>
+
+		<section class="pedido-ausente" id="pedidoAusente" hidden>
+			<h1>Nenhum pedido confirmado</h1>
+			<p>Quando você concluir um pedido, os detalhes aparecerão aqui.</p>
+		</section>
+
+		<a class="botao-inicio" href="../home/index.html">Voltar ao início</a>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>

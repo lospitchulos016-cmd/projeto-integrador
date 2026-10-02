@@ -1,0 +1,170 @@
+@import url("../checkout/style.css");
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 24px 16px;
+    display: grid;
+    place-items: center;
+}
+
+.pagina-login {
+    width: min(100%, 460px);
+}
+
+.voltar-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 14px 4px;
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.voltar-inicio:hover {
+    color: var(--primary);
+}
+
+.voltar-inicio:first-letter {
+    font-size: 1.6rem;
+    line-height: 0.7;
+}
+
+.painel-login {
+    padding: 30px;
+    background: rgba(255, 250, 245, 0.96);
+    border: 1px solid rgba(222, 182, 151, 0.6);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.cabecalho-login {
+    text-align: center;
+}
+
+.cabecalho-login img {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #171717;
+}
+
+.cabecalho-login .sobretitulo {
+    margin-bottom: 8px;
+}
+
+.cabecalho-login h1 {
+    font-size: 1.8rem;
+}
+
+.cabecalho-login > p:last-child {
+    margin-top: 8px;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+#login {
+    margin-top: 26px;
+    display: grid;
+    gap: 16px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.field input {
+    width: 100%;
+    min-height: 50px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    font: inherit;
+    outline: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field input::placeholder {
+    color: #9a8173;
+}
+
+.field input:focus-visible {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(217, 91, 42, 0.16);
+}
+
+.field input[aria-invalid="true"] {
+    border-color: #c0392b;
+}
+
+.error {
+    min-height: 1.1em;
+    margin: 5px 0 0 2px;
+    color: #a93226;
+    font-size: 0.82rem;
+}
+
+#entrar {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 2px;
+    border: 0;
+    border-radius: 11px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+#entrar:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: var(--primary-dark);
+}
+
+#entrar:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.mensagem {
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.mensagem a {
+    color: var(--primary-dark);
+    font-weight: 800;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+    .painel-login {
+        padding: 24px 18px;
+        border-radius: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,3 +1,13 @@
+:root {
+  --primary: #006847;
+  --primary-dark: #004d35;
+  --accent: #f6c445;
+  --terracotta: #ce4634;
+  --text: #2f2118;
+  --muted: #6c5a48;
+  --line: #e5c76f;
+  --card: #fffdf7;
+}
 
 * {
   margin: 0;
@@ -8,8 +18,11 @@
 
 
 body {
-  background-color: #ffffff;
-  color: #1f2937;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(246, 196, 69, 0.16) 0 4px, transparent 5px),
+    linear-gradient(135deg, #f9edbd 0%, #f7d985 48%, #efc7a1 100%);
+  background-size: 34px 34px, auto;
+  color: var(--text);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -24,10 +37,10 @@ body {
 
 
 .card {
-  background-color: #ffffff;
-  border: 1px solid #f3f4f6;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-  border-radius: 24px;
+  background-color: #fffaf0;
+  border: 3px solid var(--primary);
+  box-shadow: 0 18px 35px rgba(66, 49, 20, 0.16);
+  border-radius: 24px 24px 48px 24px;
   padding: 32px 28px;
 }
 
@@ -46,13 +59,17 @@ img {
 .header h1 {
   font-size: 24px;
   font-weight: 700;
-  color: #111827;
+  color: var(--primary-dark);
   margin-bottom: 4px;
 }
 
 .header p {
   font-size: 14px;
   color: #6b7280;
+}
+
+.header p strong {
+  color: var(--primary-dark);
 }
 
 
@@ -71,16 +88,17 @@ img {
 .input-group input {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--line);
   border-radius: 12px;
   font-size: 14px;
   outline: none;
   transition: all 0.2s ease;
-  background-color: #fafafa;
+  background-color: var(--card);
+  color: var(--text);
 }
 
 .input-group input:focus {
-  border-color: #ea580c;
+  border-color: var(--primary);
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
 }
@@ -89,9 +107,9 @@ img {
 .btn-submit {
   width: 100%;
   padding: 14px;
-  background-color: #ea580c;
+  background-color: var(--primary);
   color: #ffffff;
-  border: none;
+  border: 1px solid var(--accent);
   border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
@@ -101,7 +119,7 @@ img {
 }
 
 .btn-submit:hover {
-  background-color: #c2410c;
+  background-color: var(--terracotta);
 }
 
 .btn-submit:active {

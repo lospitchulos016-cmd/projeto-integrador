@@ -5,24 +5,28 @@
 }
 
 :root {
-    --bg: #f7f1ea;
-    --panel: #fffaf5;
-    --card: #ffffff;
-    --card-soft: #fff3e8;
-    --primary: #d95b2a;
-    --primary-dark: #a73e1d;
-    --accent: #f7c75d;
-    --text: #2a1b12;
-    --muted: #6e5246;
-    --line: #f0d8c2;
-    --success: #2e8b57;
-    --shadow: 0 18px 35px rgba(91, 42, 20, 0.14);
+    --bg: #f7edcf;
+    --panel: #fffaf0;
+    --card: #fffdf7;
+    --card-soft: #fff1c7;
+    --primary: #006847;
+    --primary-dark: #004d35;
+    --accent: #f6c445;
+    --terracotta: #ce4634;
+    --text: #2f2118;
+    --muted: #6c5a48;
+    --line: #e5c76f;
+    --success: #23865a;
+    --shadow: 0 18px 35px rgba(66, 49, 20, 0.16);
 }
 
 body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg, #f9efe7 0%, #f3e0d1 100%);
+    background:
+        radial-gradient(circle at 10% 20%, rgba(246, 196, 69, 0.16) 0 4px, transparent 5px),
+        linear-gradient(135deg, #f9edbd 0%, #f7d985 48%, #efc7a1 100%);
+    background-size: 34px 34px, auto;
     color: var(--text);
     display: flex;
     justify-content: center;
@@ -38,8 +42,8 @@ button {
 .app {
     width: min(100%, 460px);
     min-height: 740px;
-    background: rgba(255, 250, 245, 0.9);
-    border: 1px solid rgba(222, 182, 151, 0.6);
+    background: rgba(255, 250, 240, 0.97);
+    border: 3px solid var(--primary);
     border-radius: 28px;
     box-shadow: var(--shadow);
     padding: 18px 18px 110px;
@@ -133,8 +137,8 @@ button {
     grid-template-columns: 92px 1fr;
     gap: 14px;
     background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 20px;
+    border: 2px solid var(--line);
+    border-radius: 20px 20px 34px 20px;
     padding: 14px 12px;
     box-shadow: 0 8px 18px rgba(112, 68, 48, 0.06);
 }
@@ -143,8 +147,10 @@ button {
     width: 92px;
     height: 92px;
     border-radius: 22px;
-    background: linear-gradient(135deg, var(--card-soft), #ffd8b0);
-    border: 1px solid rgba(224, 150, 96, 0.2);
+    background:
+        repeating-radial-gradient(circle at 50% 50%, rgba(206,70,52,0.10) 0 5px, transparent 6px 12px),
+        var(--accent);
+    border: 2px solid var(--terracotta);
     display: flex;
     align-items: center;
     justify-content: center;
